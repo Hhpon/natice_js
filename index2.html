@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type='text/css' href="./iconfont.css">
-    <title>index</title>
+    <title>index2</title>
     <style>
         * {
             padding: 0;
@@ -41,6 +41,23 @@
             top: 50px;
         }
 
+        #message {
+            padding: 0 10px;
+        }
+
+        .message-container {
+            padding: 15px 0;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .message-left {
+            display: flex;
+            align-items: center;
+        }
+
         .tab-container {
             width: 100%;
             height: 50px;
@@ -51,26 +68,6 @@
             align-items: center;
             position: fixed;
             bottom: 0px;
-        }
-
-        .message-container {
-            padding: 5px 10px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .message-left {
-            padding-right: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .messageleft_bottom {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            color: #ccc;
         }
     </style>
 </head>
@@ -87,22 +84,20 @@
         <div>签到榜</div>
     </div>
     <div style="height: 80px;"></div>
-    <div>
-        <img src="./image/0.jpg" width="100%">
+    <div style="padding: 5px;font-size: 13px; color: #ccc; border-bottom: 1px solid #ccc;">
+        12月14日签到排行 以北京时间为准
     </div>
-    <div class="message-container">
-        <div class="message-left">
-            <div class="messageleft_top">《怒放》录音室花絮之——精益求精宋义进</div>
-            <div class="messageleft_bottom">
-                <div>熊猫直播</div>
-                <div>910&nbsp;&nbsp;阅</div>
+    <div id="message">
+        <div class='message-container'>
+            <div class="message-left">
+                <div style="border-radius:50%;height: 50px;width: 50px;overflow: hidden;"><img src="./image/3.jpg" alt=""
+                        height="50px;"></div>
+                <div style="margin-left: 5px;">开饭了吗</div>
+                <div style="width: 40px;background-color:#078DFF;text-align: center;color: #fff;border-radius: 5px;margin-left: 5px;">Lv.9</div>
             </div>
-        </div>
-        <div class="message-right">
-            <img src="./image/1.jpg" width="100px;">
+            <div>00:00:00</div>
         </div>
     </div>
-    <div id='message'></div>
     <div style="height: 50px;"></div>
     <div class="tab-container">
         <div style="text-align: center;">
@@ -123,7 +118,6 @@
         </div>
     </div>
 </body>
-
 <script>
     for (let i = 0; i < 10; i++) {
         handle();
