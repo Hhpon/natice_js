@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="./iconfont.css">
     <title>index3</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-container {
+            width: 100%;
+            background-color: #474A51;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            top: 0px;
+        }
+
+        .header-self {
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .icon-self {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+        }
+
+        .icon-self-right {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+        }
+
+        .title-container {
+            height: 50px;
+            width: 100%;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title-left {
+            height: 100%;
+            display: flex;
+        }
+
+        .title-self {}
+    </style>
 </head>
+
 <body>
-    
+    <div class="header-container">
+        <div class="header-self">
+            <div>赛事</div>
+            <div>热门</div>
+            <div>大数据</div>
+        </div>
+        <i class="iconfont icon-ren icon-self"></i>
+        <i class="iconfont icon-shaixuan icon-self-right"></i>
+    </div>
+    <div style="height: 50px;"></div>
+    <div class="title-container">
+        <div class="title-left">
+            <div class="title-self">
+                <div class="title-top">09</div>
+                <div>周日</div>
+            </div>
+            <div class="title-self">
+                <div class="title-top">2018 全明星</div>
+                <div>Day3</div>
+            </div>
+        </div>
+        <div>
+            积分榜
+            <i class="iconfont icon-youjiantou" style="font-size: 14px;"></i>
+        </div>
+    </div>
 </body>
+
 </html>
