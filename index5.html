@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="./iconfont.css">
+    <title>index5</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-container {
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #dad5d5;
+            line-height: 50px;
+            text-align: center;
+            position: fixed;
+            top: 0px;
+        }
+
+        .icon-self {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            font-size: 13px;
+        }
+
+        .input-container{
+            padding: 20vh 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .input-self{
+            height: 40px;
+            border-radius: 25px;
+            outline: none;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            flex: 1 0 auto;
+        }
+
+        .input-con{
+            padding-top: 10px;
+            display: flex;
+            position: relative;
+        }
+
+        .icon-con{
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .button-con{
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .next-con{
+            margin-top: 20px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 25px;
+            background-color: #414652;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        iG电子竞技俱乐部
+        <div class="icon-self" onclick="submit()">登录</div>
+    </div>
+    <div style="height: 50px;"></div>
+    <div class="input-container">
+        <div class="input-con">
+            <i class="iconfont icon-shouji icon-con"></i>
+            <input type="text" placeholder="请填写手机号码" class="input-self">
+        </div>
+        <div class="input-con">
+            <i class="iconfont icon-xianshi_bi icon-con"></i>
+            <input type="text" placeholder="填写验证码" class="input-self">
+            <div class="button-con" onclick="submit()">获取验证码</div>
+        </div>
+        <div class="next-con" onclick="handle()">下一步</div>
+    </div>
+</body>
+<script>
+    function submit() {
+        alert('该功能尚未开发完毕！')
+    }
+
+    function handle() {
+        let inputList = document.getElementsByClassName('input-self')
+        console.log(inputList.length);
+        for (let i = 0; i < inputList.length; i++) {
+            if (!inputList[i].value) {
+                alert('请输入完整！')
+                return;
+            }
+            alert('恭喜你输入完整了！')
+        }
+    }
+</script>
+
+</html>

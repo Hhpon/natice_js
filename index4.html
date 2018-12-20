@@ -31,6 +31,18 @@
         .text-container {
             padding-left: 10px;
         }
+
+        .handle-container {
+            height: 20vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+
+        .handle-self {
+            width: 25%;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -55,6 +67,41 @@
             </div>
         </div>
     </div>
+    <div>
+        <div style="font-size: 15px;font-weight: bold;padding: 5px;">个人中心</div>
+        <div class="handle-container">
+            <div class="handle-self">
+                <i class="iconfont icon-renwu"></i>
+                <div>任务</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div style="font-size: 15px;font-weight: bold;padding: 5px;">其他服务</div>
+        <div class="handle-container">
+            <div class="handle-self">
+                <i class="iconfont icon-renwu"></i>
+                <div>任务</div>
+            </div>
+        </div>
+    </div>
 </body>
+
+<script>
+    function handle(index) {
+        let test = document.getElementsByClassName('handle-self')[0].cloneNode(true);
+        document.getElementsByClassName('handle-container')[index].appendChild(test);
+    }
+
+    const indexList = {
+        person: 0,
+        other: 1
+    }
+
+    for (let i = 0; i < 6; i++) {
+        handle(indexList.person);
+        handle(indexList.other);
+    }
+</script>
 
 </html>

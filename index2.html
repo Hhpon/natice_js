@@ -95,7 +95,7 @@
                 <div style="margin-left: 5px;">开饭了吗</div>
                 <div style="width: 40px;background-color:#078DFF;text-align: center;color: #fff;border-radius: 5px;margin-left: 5px;">Lv.9</div>
             </div>
-            <div>00:00:00</div>
+            <div id='time'>00:00:01</div>
         </div>
     </div>
     <div style="height: 50px;"></div>
@@ -122,6 +122,8 @@
     const data = {
         time: '00:00:00'
     }
+
+    document.getElementById('time').innerHTML = data.time;
 
     for (let i = 0; i < 10; i++) {
         handle();
