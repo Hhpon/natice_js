@@ -114,15 +114,15 @@
       </div>
       <div class="boxItem2">
         <img class="headImg" src="./image/4.jpg" alt="">
-        <div class="boxItem2">
+        <div class="boxItem2" onclick="handle(1)">
           <i class="iconfont icon-guanzhu" style="font-size:43px;"></i>
           <span style="font-size:12px;">3526</span>
         </div>
-        <div class="boxItem2">
+        <div class="boxItem2" onclick="handle(2)">
           <i class="iconfont icon-weixin" style="font-size:35px;"></i>
           <span style="font-size:12px;">266</span>
         </div>
-        <div>
+        <div onclick="handle(3)">
           <i class="iconfont icon-share" style="font-size:25px;"></i>
         </div>
         <img class="bottomImg" src="./image/4.jpg" alt="">
@@ -153,5 +153,22 @@
     </div>
   </div>
 </body>
+<script>
+  const returnText = {
+    num1: '感谢点赞！',
+    num2: '该功能还在开发中！',
+    num3: '感谢分享'
+  }
+
+  function handle(index) {
+    if (index === 1) {
+      alert(returnText.num1);
+    } else if (index === 2) {
+      alert(returnText.num2);
+    } else if (index === 3) {
+      alert(returnText.num3)
+    }
+  }
+</script>
 
 </html>
