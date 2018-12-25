@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="./iconfont.css">
+    <title>index4</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('./image/2.jpg');
+            background-size: 100%;
+        }
+
+        .sign-container {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .sign-con{
+            width: 75%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-con{
+            width: 100%;
+            padding-top: 50px;
+            position: relative;
+        }
+
+        .input-self{
+            width: 100%;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid rgb(138, 137, 137);
+        }
+
+        .icon-self{
+            position: absolute;
+            right: 10px;
+            bottom: 2px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sign-container">
+            <div style="color: #fff; padding: 10px 15px;">
+                <i class="iconfont icon-zuojiantou"></i>
+            </div>
+            <div class="sign-con">
+                <div class="input-con">
+                    <input type="text" class="input-self" placeholder="邮箱/手机/用户名">
+                </div>
+                <div class="input-con">
+                    <input type="text" class="input-self" placeholder="账号密码">
+                    <i class="iconfont icon-yanjing-tianchong icon-self"></i>
+                </div>
+                <div style="color: #86611B;font-size: 15px;text-decoration: underline;margin: 10px 10px 0px auto;">忘记密码？</div>
+                <div style="background-color: #86611B;color: #fff;padding: 10px 0px;text-align: center;width: 100%;border-radius: 30px;margin-top: 20px;">登录</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

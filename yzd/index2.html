@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index2</title>
+  <link rel="stylesheet" href="./iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .icon-sousuo {
+      color: #ffffff;
+      font-size: 25px;
+      margin: 10px;
+      position: absolute;
+      top: 0;
+    }
+
+    .bg {
+      width: 100%;
+      height: 100vh;
+      line-height: 100vh;
+      background-color: black;
+      z-index: -1000;
+    }
+
+    .bgImg {
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    .tab {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 6px;
+    }
+
+    .tabItem {
+      text-align: center;
+    }
+
+    .tabIcon {
+      color: #ffffff;
+      font-size: 30px;
+    }
+
+    .tabTit {
+      color: #ffffff;
+      font-size: 12px;
+    }
+
+    .box {
+      width: 100%;
+      position: fixed;
+      bottom: 80px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .boxItem2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .headImg {
+      width: 35px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .bottomImg {
+      width: 30px;
+      border: 10px solid #303030;
+      border-radius: 50%;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="bg">
+      <img class="bgImg" src="./image/3.jpg" alt="">
+    </div>
+
+    <i class="iconfont icon-sousuo"></i>
+
+    <div class="box">
+      <div class="boxItem1">
+        <div style="margin-bottom:10px;">
+          <span style="text-decoration: underline;"># 人像</span><i class="iconfont icon-youjiantou"></i>
+        </div>
+        <div style="text-decoration: underline;margin-bottom:10px;">@哆啦</div>
+        <div>出镜： 我</div>
+        <div style="margin-bottom:10px;">摄影/后期： 我</div>
+        <div>
+          <i class="iconfont icon-icon-test"></i><span style="text-decoration: underline;">戒烟</span><i class="iconfont icon-youjiantou"></i>
+        </div>
+      </div>
+      <div class="boxItem2">
+        <img class="headImg" src="./image/4.jpg" alt="">
+        <div class="boxItem2">
+          <i class="iconfont icon-guanzhu" style="font-size:43px;"></i>
+          <span style="font-size:12px;">3526</span>
+        </div>
+        <div class="boxItem2">
+          <i class="iconfont icon-weixin" style="font-size:35px;"></i>
+          <span style="font-size:12px;">266</span>
+        </div>
+        <div>
+          <i class="iconfont icon-share" style="font-size:25px;"></i>
+        </div>
+        <img class="bottomImg" src="./image/4.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- tab -->
+    <div class="tab">
+      <div class="tabItem">
+        <i class="iconfont icon-shouye tabIcon"></i>
+        <div class="tabTit">首页</div>
+      </div>
+      <div class="tabItem">
+        <i class="iconfont icon-dianyingshipin tabIcon"></i>
+        <div class="tabTit">照片电影</div>
+      </div>
+      <div class="tabItem">
+        <i class="iconfont icon-jiahao tabIcon"></i>
+      </div>
+      <div class="tabItem">
+        <i class="iconfont icon-yanjing-tianchong tabIcon"></i>
+        <div class="tabTit">活动</div>
+      </div>
+      <div class="tabItem">
+        <i class="iconfont icon-wode tabIcon"></i>
+        <div class="tabTit">我的</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

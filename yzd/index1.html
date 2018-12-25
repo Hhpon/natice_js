@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="./iconfont.css">
+    <title>index1</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container{
+        width: 100%;
+        position: fixed;
+        background-color: #fff;
+    }
+
+    .search-container{
+        width: 95%;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+    }
+
+    .search-con{
+        flex: 1 0 auto;
+        outline: none;
+        border: none;
+        font-size: 17px;
+    }
+
+    .nav-container{
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        overflow: auto;
+        display: flex;
+        color: rgb(172, 172, 172);
+        padding: 5px;
+    }
+
+    .nav-con{
+        width: 40px;
+        text-decoration: underline;
+        padding: 0 10px;
+        text-align: center;
+        flex: 0 0 auto;
+    }
+
+    .nav-icon{
+        width: 20px;
+        background-color: #fff;
+        position: fixed;
+        right: 0px;
+    }
+
+    .nav-self{
+        font-size: 18px;
+        color: black;
+        border-bottom: 2px solid #EC3768;
+    }
+
+    .kind-container{
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .kind-self{
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+    }
+
+    #image-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .image-con{
+        width: 33%;
+    }
+    
+    .tab {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 0px;
+      background-color: #fff;
+    }
+
+    .tabItem {
+      text-align: center;
+    }
+
+    .tabIcon {
+      font-size: 30px;
+    }
+
+    .tabTit {
+      font-size: 12px;
+    }
+
+    .add-icon{
+        padding: 5px;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #F95F68;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="search-container">
+            <i class="iconfont icon-sousuo search-icon"></i>
+            <input type="text" class="search-con" placeholder="你也许想找 抖音美女摄影师">
+        </div>
+        <div class="nav-container">
+            <div class="nav-con">关注</div>
+            <div class="nav-con">推荐</div>
+            <div class="nav-con">壁纸</div>
+            <div class="nav-con">宠萌</div>
+            <div class="nav-con">美食</div>
+            <div class="nav-con">教程</div>
+            <div class="nav-con">热点</div>
+            <i class="iconfont icon-youjiantou nav-icon"></i>
+        </div>
+        <div class="kind-container">
+            <div class="kind-self">全部</div>
+            <div class="kind-self">动态壁纸</div>
+            <div class="kind-self">少女</div>
+            <div class="kind-self">人像</div>
+            <div class="kind-self">星空</div>
+        </div>
+    </div>
+    <div style="height: 102px;"></div>
+    <div id="image-container">
+        <div class="image-con">
+            <img src="./image/2.jpg" alt="" width="100%" class="image-self">
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+    <!-- tab -->
+    <div class="tab">
+        <div class="tabItem">
+            <i class="iconfont icon-shouye tabIcon"></i>
+            <div class="tabTit">首页</div>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-dianyingshipin tabIcon"></i>
+            <div class="tabTit">照片电影</div>
+        </div>
+        <div class="tabItem add-icon">
+            <i class="iconfont icon-jiahao tabIcon"></i>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-yanjing-tianchong tabIcon"></i>
+            <div class="tabTit">活动</div>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-wode tabIcon"></i>
+            <div class="tabTit">我的</div>
+        </div>
+    </div>
+</body>
+<script>
+    for (let i = 0; i < 11; i++) {
+        handle();
+    }
+
+    function handle() {
+        let test = document.getElementsByClassName('image-con')[0].cloneNode(true);
+        document.getElementById('image-container').appendChild(test);
+    }
+</script>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="./iconfont.css">
+    <title>index3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            width: 100%;
+            position: fixed;
+            background-color: #fff;
+        }
+
+        .search-container {
+            width: 95%;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        .search-con {
+            flex: 1 0 auto;
+            outline: none;
+            border: none;
+            font-size: 17px;
+        }
+
+        .nav-container {
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            width: 100%;
+            overflow: auto;
+            display: flex;
+            color: rgb(172, 172, 172);
+            padding: 5px;
+        }
+
+        .nav-con {
+            width: 40px;
+            text-decoration: underline;
+            padding: 0 10px;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .nav-icon {
+            width: 20px;
+            background-color: #fff;
+            position: fixed;
+            right: 0px;
+        }
+
+        .nav-self {
+            font-size: 18px;
+            color: black;
+            border-bottom: 2px solid #EC3768;
+        }
+
+        .kind-container {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            overflow: auto;
+        }
+
+        .kind-self {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            flex: 0 0 auto;
+            margin-right: 10px;
+            background-color: #EDEDED;
+            color: #B1B1B1;
+        }
+
+        .kind-selected{
+            background-color: #F7AD30;
+            color: #fff;
+        }
+
+        #message{
+            padding: 0 10px;
+        }
+
+        .message-container{
+            border-bottom: 1px solid #ccc;
+        }
+
+        .message-top{
+            display: flex;
+            padding: 10px 0px;
+            font-weight: normal;
+        }
+
+        .message-bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            padding-bottom: 10px;
+            color: #B1B1B1;
+        }
+
+        .message-right{
+            padding-left: 10px;
+        }
+
+        .img-con{
+            display: flex;
+            align-items: center;
+        }
+
+            
+    .tab {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 0px;
+      background-color: #fff;
+    }
+
+    .tabItem {
+      text-align: center;
+    }
+
+    .tabIcon {
+      font-size: 30px;
+    }
+
+    .tabTit {
+      font-size: 12px;
+    }
+
+    .add-icon{
+        padding: 5px;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #F95F68;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="search-container">
+            <i class="iconfont icon-sousuo search-icon"></i>
+            <input type="text" class="search-con" placeholder="你也许想找 抖音美女摄影师">
+        </div>
+        <div class="nav-container">
+            <div class="nav-con">关注</div>
+            <div class="nav-con">推荐</div>
+            <div class="nav-con">壁纸</div>
+            <div class="nav-con nav-self">宠萌</div>
+            <div class="nav-con">美食</div>
+            <div class="nav-con">教程</div>
+            <div class="nav-con">热点</div>
+            <i class="iconfont icon-youjiantou nav-icon"></i>
+        </div>
+        <div class="kind-container">
+            <div class="kind-self kind-selected">所有(1972)</div>
+            <div class="kind-self">人像(348)</div>
+            <div class="kind-self">后期修图(1036)</div>
+            <div class="kind-self">人像</div>
+            <div class="kind-self">星空</div>
+        </div>
+    </div>
+    <div style="height: 102px;"></div>
+    <div id='message'>
+        <div class="message-container">
+            <div class="message-top">
+                <div>
+                    <img src="./image/4.jpg" alt="" height="120px">
+                </div>
+                <div class="message-right">
+                    <div style="font-size: 18px;">风光摄影到底有没有捷径？</div>
+                    <div style="font-size: 14px;padding-top: 10px;">2018摄影年终总结Joyous周游去了不同的地方，看了不同的风景，知道了不同的事，感悟了不同的人生。2018年图虫我获得了图虫年度摄影...</div>
+                </div>
+            </div>
+            <div class="message-bottom">
+                <div class="img-con">
+                    <img src="./image/1.jpg" alt="" height="35px">
+                    &nbsp;Joyous 周游
+                </div>
+                <div>
+                    阅读数 8740
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+    <!-- tab -->
+    <div class="tab">
+        <div class="tabItem">
+            <i class="iconfont icon-shouye tabIcon"></i>
+            <div class="tabTit">首页</div>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-dianyingshipin tabIcon"></i>
+            <div class="tabTit">照片电影</div>
+        </div>
+        <div class="tabItem add-icon">
+            <i class="iconfont icon-jiahao tabIcon"></i>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-yanjing-tianchong tabIcon"></i>
+            <div class="tabTit">活动</div>
+        </div>
+        <div class="tabItem">
+            <i class="iconfont icon-wode tabIcon"></i>
+            <div class="tabTit">我的</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    for (let i = 0; i < 11; i++) {
+        handle();
+    }
+
+    function handle() {
+        let test = document.getElementsByClassName('message-container')[0].cloneNode(true);
+        document.getElementById('message').appendChild(test);
+    }
+</script>
+
+</html>
