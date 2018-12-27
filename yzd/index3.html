@@ -181,26 +181,29 @@
     </div>
     <div style="height: 102px;"></div>
     <div id='message'>
-        <div class="message-container">
-            <div class="message-top">
-                <div>
-                    <img src="./image/4.jpg" alt="" height="120px">
+        <template class="message_template">
+            <div class="message-container">
+                <div class="message-top">
+                    <div style="width: 120px; height: 120px; overflow: hidden; flex:0 0 auto; ">
+                        <img src="" alt="" width="120px" class="message_image">
+                    </div>
+                    <div class="message-right">
+                        <div style="font-size: 15px;" class="message_title">风光摄影到底有没有捷径？</div>
+                        <div style="font-size: 12px;padding-top: 10px;" class="message_content">2018摄影年终总结Joyous周游去了不同的地方，看了不同的风景，知道了不同的事，感悟了不同的人生。2018年图虫我获得了图虫年度摄影...</div>
+                    </div>
                 </div>
-                <div class="message-right">
-                    <div style="font-size: 18px;">风光摄影到底有没有捷径？</div>
-                    <div style="font-size: 14px;padding-top: 10px;">2018摄影年终总结Joyous周游去了不同的地方，看了不同的风景，知道了不同的事，感悟了不同的人生。2018年图虫我获得了图虫年度摄影...</div>
+                <div class="message-bottom">
+                    <div class="img-con">
+                        <img src="./image/1.jpg" alt="" height="35px">
+                        &nbsp;
+                        <span class="message_nickname"></span>
+                    </div>
+                    <div>
+                        阅读数 8740
+                    </div>
                 </div>
             </div>
-            <div class="message-bottom">
-                <div class="img-con">
-                    <img src="./image/1.jpg" alt="" height="35px">
-                    &nbsp;Joyous 周游
-                </div>
-                <div>
-                    阅读数 8740
-                </div>
-            </div>
-        </div>
+        </template>
     </div>
     <div style="height: 50px;"></div>
     <!-- tab -->
@@ -229,17 +232,57 @@
 
 <script>
 
-    const index = {
-        lengthNum: 11
+    const messageJson = [
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/9.jpg',
+            title: 'HongKong香港街拍地推荐（一）',
+            content: '很多人对于香港的喜欢，不一定是来自繁华都市的摩天大楼，也许更是那街头数不清的鱼蛋面双皮奶大排档，也许是街头红红绿绿的双层巴士…'
+        },
+        {
+            nickname: 'Jian李健',
+            imgUrl: './image/10.jpg',
+            title: '6种在家也能拍出的杂志布光',
+            content: '摄影界的颜值担当关于Lara JadeLara生于英国斯塔福德郡，14岁时便接触摄影，17岁时开始了自己的摄影业务。5、6年前淘宝上有一套她...'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/11.jpg',
+            title: '星爷都去取景的「深圳拍照地」',
+            content: '我怎么能不安利给你！Air君有话要说“Air君，深圳哪里拍照好看？”、“深圳旅拍攻略有吗？”、“怎么这期还不是深圳的，求深圳”…好吧，每…'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/9.jpg',
+            title: 'HongKong香港街拍地推荐（一）',
+            content: '很多人对于香港的喜欢，不一定是来自繁华都市的摩天大楼，也许更是那街头数不清的鱼蛋面双皮奶大排档，也许是街头红红绿绿的双层巴士…'
+        },
+        {
+            nickname: 'Jian李健',
+            imgUrl: './image/10.jpg',
+            title: '6种在家也能拍出的杂志布光',
+            content: '摄影界的颜值担当关于Lara JadeLara生于英国斯塔福德郡，14岁时便接触摄影，17岁时开始了自己的摄影业务。5、6年前淘宝上有一套她...'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/11.jpg',
+            title: '星爷都去取景的「深圳拍照地」',
+            content: '我怎么能不安利给你！Air君有话要说“Air君，深圳哪里拍照好看？”、“深圳旅拍攻略有吗？”、“怎么这期还不是深圳的，求深圳”…好吧，每…'
+        },
+    ]
+
+    function handle(index) {
+        let test = document.querySelector('.message_template').content;
+        test.querySelector('.message_nickname').innerText = messageJson[index].nickname;
+        test.querySelector('.message_image').src = messageJson[index].imgUrl;
+        test.querySelector('.message_content').innerText = messageJson[index].content;
+        test.querySelector('.message_title').innerText = messageJson[index].title;
+        let clone = document.importNode(test, true);
+        document.getElementById('message').appendChild(clone);
     }
 
-    for (let i = 0; i < index.lengthNum; i++) {
-        handle();
-    }
-
-    function handle() {
-        let test = document.getElementsByClassName('message-container')[0].cloneNode(true);
-        document.getElementById('message').appendChild(test);
+    for (let i = 0; i < messageJson.length; i++) {
+        handle(i);
     }
 </script>
 

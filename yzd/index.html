@@ -152,39 +152,37 @@
     </div>
     <div style="height: 72px;"></div>
     <div id="message">
-        <div class="message-container">
-            <div class="message-title">
-                <div style="display: flex;align-items: center;">
-                    <div><img src="./image/1.jpg" alt="" height="30px"></div>
-                    &nbsp;
-                    <span style="font-size: 14px;text-decoration: underline;">快乐朵朵</span>
-                </div>
-                <div style="color: red;text-decoration: underline;">+ 关注</div>
-            </div>
-            <div><img src="./image/0.jpg" alt="" width="100%"></div>
-            <div>
-                <div class="nickname-con">
-                    <i class="iconfont icon-icon-test"></i>
-                    <span>猫咪</span>
-                </div>
-                <div style="font-size: 12px;line-height: 20px;">
-                    辰辰的校园日记<br>
-                    同济大学<br>
-                    出镜:辰辰
-                </div>
-                <div class="button-container">
-                    <div class="button-self">
-                        <i class="iconfont icon-guanzhu"></i>206
+        <template class="message_template">
+            <div class="message-container">
+                <div class="message-title">
+                    <div style="display: flex;align-items: center;">
+                        <div><img src="./image/1.jpg" alt="" height="30px"></div>
+                        &nbsp;
+                        <span style="font-size: 14px;text-decoration: underline;" class="message_nickname"></span>
                     </div>
-                    <div class="button-self">
-                        <i class="iconfont icon-liuyan"></i>18
+                    <div style="color: red;text-decoration: underline;">+ 关注</div>
+                </div>
+                <div><img src="" alt="" width="100%" class="message_image"></div>
+                <div>
+                    <div class="nickname-con">
+                        <i class="iconfont icon-icon-test"></i>
+                        <span>猫咪</span>
                     </div>
-                    <div class="button-self">
-                        <i class="iconfont icon-share"></i>
+                    <div style="font-size: 12px;line-height: 20px;" class="message_content"></div>
+                    <div class="button-container">
+                        <div class="button-self">
+                            <i class="iconfont icon-guanzhu"></i>206
+                        </div>
+                        <div class="button-self">
+                            <i class="iconfont icon-liuyan"></i>18
+                        </div>
+                        <div class="button-self">
+                            <i class="iconfont icon-share"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </template>
     </div>
     <div style="height: 50px;"></div>
     <!-- tab -->
@@ -212,13 +210,51 @@
 </body>
 
 <script>
-    for (let i = 0; i < 10; i++) {
-        handle();
+
+    const messageJson = [
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/6.jpg',
+            content: '《UBein Bridge》时光荏苒，岁月枯荣，多年后才开始明白，花开了一季又一季，而路过的人却再也寻不回来了。夕阳西下人来人往的桥上。仿佛看了人的一辈子。行走在路上的阿卡.Carson }'
+        },
+        {
+            nickname: 'Jian李健',
+            imgUrl: './image/7.jpg',
+            content: '66云水谣·12月初拍摄于新西兰\n使用器材：\nGFX50S+32-64/4+ND1.8（6档）减光镜降低快门速度'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/8.jpg',
+            content: '66《渔夫》·《渔夫》拍损于缅句菌莱湖。菌莱湖上漂浮着一片片的水上菜园，它叫“浮岛”。这些浮岛可以随湖水的涨落而升降，也可以像船一样划来划去。在湖上你经常能遇到独脚渔夫.…'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/6.jpg',
+            content: '《UBein Bridge》时光荏苒，岁月枯荣，多年后才开始明白，花开了一季又一季，而路过的人却再也寻不回来了。夕阳西下人来人往的桥上。仿佛看了人的一辈子。行走在路上的阿卡.Carson }'
+        },
+        {
+            nickname: 'Jian李健',
+            imgUrl: './image/7.jpg',
+            content: '66云水谣·12月初拍摄于新西兰\n使用器材：\nGFX50S+32-64/4+ND1.8（6档）减光镜降低快门速度'
+        },
+        {
+            nickname: '阿卡Carson',
+            imgUrl: './image/8.jpg',
+            content: '66《渔夫》·《渔夫》拍损于缅句菌莱湖。菌莱湖上漂浮着一片片的水上菜园，它叫“浮岛”。这些浮岛可以随湖水的涨落而升降，也可以像船一样划来划去。在湖上你经常能遇到独脚渔夫.…'
+        },
+    ]
+
+    function handle(index) {
+        let test = document.querySelector('.message_template').content;
+        test.querySelector('.message_nickname').innerText = messageJson[index].nickname;
+        test.querySelector('.message_image').src = messageJson[index].imgUrl;
+        test.querySelector('.message_content').innerText = messageJson[index].content;
+        let clone = document.importNode(test, true);
+        document.getElementById('message').appendChild(clone);
     }
 
-    function handle() {
-        let test = document.getElementsByClassName('message-container')[0].cloneNode(true);
-        document.getElementById('message').appendChild(test);
+    for (let i = 0; i < messageJson.length; i++) {
+        handle(i);
     }
 </script>
 
