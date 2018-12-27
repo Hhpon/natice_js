@@ -90,19 +90,22 @@
     <div>
         <img src="./image/0.jpg" width="100%">
     </div>
-    <div class="message-container">
-        <div class="message-left">
-            <div class="messageleft_top">《怒放》录音室花絮之——精益求精宋义进</div>
-            <div class="messageleft_bottom">
-                <div>熊猫直播</div>
-                <div>910&nbsp;&nbsp;阅</div>
+    <div id='message'>
+        <template id="message_template">
+            <div class="message-container">
+                <div class="message-left">
+                    <div class="messageleft_top"></div>
+                    <div class="messageleft_bottom">
+                        <div class="messageleftbottom_left"></div>
+                        <div class="messageleftbottom_right"></div>
+                    </div>
+                </div>
+                <div class="message-right">
+                    <img src="" width="100px;" class="message_image">
+                </div>
             </div>
-        </div>
-        <div class="message-right">
-            <img src="./image/1.jpg" width="100px;">
-        </div>
+        </template>
     </div>
-    <div id='message'></div>
     <div style="height: 50px;"></div>
     <div class="tab-container">
         <div style="text-align: center;">
@@ -125,13 +128,66 @@
 </body>
 
 <script>
-    for (let i = 0; i < 10; i++) {
-        handle();
+
+    const messageJson = [
+        {
+            title: 'K杯简报：剑魔翻江倒海 GRF直落两场',
+            host: '英雄联盟赛事',
+            reading: '7.6万 阅',
+            imgUrl: './image/5.jpg'
+        },
+        {
+            title: '大司马直播道歉：打不上黄金 以后不在恶意掉分',
+            host: '金牌搬运工',
+            reading: '4万  阅',
+            imgUrl: './image/6.jpg'
+        },
+        {
+            title: '姿态与明星张彬彬双排 全程骚话不断',
+            host: '晚秋不晚',
+            reading: '15.7万 阅',
+            imgUrl: './image/7.jpg'
+        },
+        {
+            title: 'iG空降真人秀现场 传授“独家”夺冠秘诀',
+            host: '秒拍',
+            reading: '5.3万 阅',
+            imgUrl: './image/8.jpg'
+        },
+        {
+            title: '【Faker直播】指向技能全空也能杀到人？',
+            host: '油管达人',
+            reading: '6.1万 阅',
+            imgUrl: './image/9.jpg'
+        },
+        {
+            title: 'Duke变Buke？新京报报道iG引发多方吐槽',
+            host: '千年独奏歌',
+            reading: '19万 阅',
+            imgUrl: './image/10.jpg'
+        },
+        {
+            title: 'KT打野：我们能赢归功于Smeb',
+            host: '想去南极的鸡丁',
+            reading: '11.1万 阅',
+            imgUrl: './image/11.jpg'
+        }
+    ]
+
+    function handle(index) {
+        console.log(index);
+        console.log(messageJson[index].title);
+        let test = document.getElementById('message_template').content;
+        test.querySelector('.messageleft_top').innerText = messageJson[index].title;
+        test.querySelector('.messageleftbottom_left').innerText = messageJson[index].host;
+        test.querySelector('.messageleftbottom_right').innerText = messageJson[index].reading;
+        test.querySelector('.message_image').src = messageJson[index].imgUrl;
+        let clone = document.importNode(test, true);
+        document.getElementById('message').appendChild(clone);
     }
 
-    function handle() {
-        let test = document.getElementsByClassName('message-container')[0].cloneNode(true);
-        document.getElementById('message').appendChild(test);
+    for (let i = 0; i < messageJson.length; i++) {
+        handle(i);
     }
 </script>
 

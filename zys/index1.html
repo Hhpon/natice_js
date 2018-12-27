@@ -108,19 +108,22 @@
         <i class="iconfont icon-ai221 icon-abso"></i>
     </div>
     <div style="height: 80px;"></div>
-    <div class="message-container">
-        <div class="message-left">
-            <div class="messageleft_top">2019年春季赛转会专题（实时更新）</div>
-            <div class="messageleft_bottom">
-                <div>英雄联盟赛事</div>
-                <div>9110&nbsp;&nbsp;阅</div>
+    <div id='message'>
+        <template id="message_template">
+            <div class="message-container">
+                <div class="message-left">
+                    <div class="messageleft_top"></div>
+                    <div class="messageleft_bottom">
+                        <div class="messageleftbottom_left"></div>
+                        <div class="messageleftbottom_right"></div>
+                    </div>
+                </div>
+                <div class="message-right">
+                    <img src="" width="100px;" class="message_image">
+                </div>
             </div>
-        </div>
-        <div class="message-right">
-            <img src="./image/2.png" width="100px;">
-        </div>
+        </template>
     </div>
-    <div id='message'></div>
     <div style="height: 50px;"></div>
     <div class="tab-container">
         <div style="text-align: center;">
@@ -142,13 +145,72 @@
     </div>
 </body>
 <script>
-    for (let i = 0; i < 10; i++) {
-        handle();
+
+    const messageJson = [
+        {
+            title: 'KT打野：我们能赢归功于Smeb',
+            host: '想去南极的鸡丁',
+            reading: '11.1万 阅',
+            imgUrl: './image/11.jpg'
+        },
+        {
+            title: 'iG传授“独家”夺冠秘诀：选四个很强的队友',
+            host: '巧克力酱陈弯弯',
+            reading: '24万 阅',
+            imgUrl: './image/12.jpg'
+        },
+        {
+            title: 'ESPORTS年度品牌颁奖盛典投票开始啦',
+            host: '宋金义的鸡腿贩卖店',
+            reading: '2.3万 阅',
+            imgUrl: './image/13.jpg'
+        },
+        {
+            title: 'iG下路快乐大本营首秀 12.30播出',
+            host: 'iG电子竞技俱乐部',
+            reading: '5.9万 阅',
+            imgUrl: './image/15.jpg'
+        },
+        {
+            title: 'KT打野：我们能赢归功于Smeb',
+            host: '想去南极的鸡丁',
+            reading: '11.1万 阅',
+            imgUrl: './image/11.jpg'
+        },
+        {
+            title: 'iG传授“独家”夺冠秘诀：选四个很强的队友',
+            host: '巧克力酱陈弯弯',
+            reading: '24万 阅',
+            imgUrl: './image/12.jpg'
+        },
+        {
+            title: 'ESPORTS年度品牌颁奖盛典投票开始啦',
+            host: '宋金义的鸡腿贩卖店',
+            reading: '2.3万 阅',
+            imgUrl: './image/13.jpg'
+        },
+        {
+            title: 'iG下路快乐大本营首秀 12.30播出',
+            host: 'iG电子竞技俱乐部',
+            reading: '5.9万 阅',
+            imgUrl: './image/15.jpg'
+        },
+    ]
+
+    function handle(index) {
+        console.log(index);
+        console.log(messageJson[index].title);
+        let test = document.getElementById('message_template').content;
+        test.querySelector('.messageleft_top').innerText = messageJson[index].title;
+        test.querySelector('.messageleftbottom_left').innerText = messageJson[index].host;
+        test.querySelector('.messageleftbottom_right').innerText = messageJson[index].reading;
+        test.querySelector('.message_image').src = messageJson[index].imgUrl;
+        let clone = document.importNode(test, true);
+        document.getElementById('message').appendChild(clone);
     }
 
-    function handle() {
-        let test = document.getElementsByClassName('message-container')[0].cloneNode(true);
-        document.getElementById('message').appendChild(test);
+    for (let i = 0; i < messageJson.length; i++) {
+        handle(i);
     }
 </script>
 
